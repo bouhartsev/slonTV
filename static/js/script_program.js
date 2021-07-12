@@ -36,9 +36,7 @@ function load_data() {
     $.get("controllers/program.txt", function (data) {
         events = data.split('\n');
         for (var i = 0; i < events.length - 1; i++) {
-            if (events[i].length != 1) {
-                events[i] = events[i].slice(0, -1);
-            } else events[i] = " ";
+            if (events[i].length <= 1) events[i] = " ";
         }
         for (var i = 0; i < events.length; i++) localStorage.setItem("events" + i, events[i]);
         localStorage.setItem("last_update", new Date().getTime());
