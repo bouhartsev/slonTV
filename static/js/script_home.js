@@ -35,7 +35,7 @@ function load_data() {
     $.get("controllers/program.txt", function (data) {
         events = data.split('\n');
         for (var i = 0; i < events.length - 1; i++) {
-            if (events[i].length != 1) {
+            if (events[i].length > 1) {
                 events[i] = events[i].slice(0, -1);
             } else events[i] = " ";
         } 
